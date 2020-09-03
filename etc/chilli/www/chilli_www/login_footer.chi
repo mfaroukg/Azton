@@ -1,0 +1,38 @@
+<!--
+  --  The message between the form and the footer on the login page
+  --  An example, "Contact the owner of this hotspot $(href "contact.chi" "here")"
+  -->
+
+
+<!--
+  --  The message between the form and the footer on the login page
+  -->
+<script>
+    (function () {
+        var form = document.forms[0],
+            notify = document.getElementById("notify"),
+            counter = document.getElementById("counter"),
+            autologin,
+            updateInerval;
+
+        function cancelAutologin() {
+            clearInterval(updateInerval);
+            clearTimeout(autologin);
+            notify.innerHTML = "Автоматический вход отключен. Логин и пароль гостевого доступа: <strong>wifi</strong>.";
+        }
+
+        function updateCounter(el) {
+            el.innerHTML = parseInt(el.innerHTML) - 1 || 0;
+        }
+
+        updateInerval = setInterval(function () {
+            updateCounter(counter);
+        }, 1000);
+
+
+        autologin = setTimeout(function () {
+            form.submit();
+        }, 30000);
+        form['username'].onfocus = cancelAutologin;
+    })()
+</script>

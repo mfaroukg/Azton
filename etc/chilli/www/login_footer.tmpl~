@@ -1,0 +1,50 @@
+<!--
+  --  The message between the form and the footer on the login page
+  --  An example, "Contact the owner of this hotspot $(href "contact.chi" "here")"
+>rc="flower.jpg" >
+>
+<p style="font:italic small-caps bold 30px/50px Garamond, Georgia, Times, Serif;text-align:center;color:red;">
+</p>
+<p style="font:italic small-caps bold 30px/50px Garamond, Georgia, Times, Serif;text-align:center;color:orange;">
+
+<!--نقدم لكم عروض عيد الأضحى المبارك ...... وكل عام وانتم بخير
+</p>-->
+
+<!--<img width="150" height="100" src="coffee.jpg" > <img width="150" height="100" src="tea.jpg" >--> 
+
+
+
+<a href="http://$HS_UAMLISTEN/daloradius/contrib/chilli/portal2/signup-free/index.php"><img height=56 width=56 src="signup1.jpg" ></a> -->
+<input type="button" name="decline" value="للشكاوى والمقترحات Feedback" onClick="window.location='/www/contact.chi'">
+<input type="button" name="decline" value="Sign-up اشتراكك الاونلين" onClick="window.location='http://$HS_UAMLISTEN/daloradius/contrib/chilli/portal2/signup-free/index.php'">
+<br>
+<input type="button" name="decline" value="Logout الخروج" onClick="window.location='http://logout/'">
+<h1>للاطلاع على استهلاكك </h1>
+<a href="http://$HS_UAMLISTEN:4990/www/status.chi"><img width="40" height="40" src="status.jpg" ><br><br>
+<!--
+<table border="6" table-align="left">
+<tr>
+<th>Your login start</th><th>Your Traffic</th><th>Your Duration</th><th> Total time</th>
+</tr>
+<tr>
+<td>$(mysql -uroot -p38122020 radius -B -e "SELECT   username AS '= ', acctstarttime as '' FROM radacct WHERE  acctsessionid = '$COOVA_SESSIONID'") </td>
+<td>$(mysql -uroot -p38122020 radius -B -e "SELECT (sum(acctinputoctets)  + SUM(acctoutputoctets))/1024/1024 AS '' FROM radacct WHERE  acctsessionid = '$COOVA_SESSIONID'") Mbits</td>
+<td> $(mysql -uroot -p38122020  radius -B -e "SELECT sum(AcctSessionTime)/3600 AS '' FROM radacct WHERE  acctsessionid = '$COOVA_SESSIONID'") Hrs</td>
+<td> $(mysql -uroot -p38122020  radius -B -e "SELECT sum(AcctSessionTime)/3600 AS '' FROM radacct WHERE  callingstationid = '$FORM_mac'") Hrs</td>
+</tr>
+</table> 
+
+-->
+<a href="https://sites.google.com/site/aztontrade/home"> <img src="flower.jpg" >
+</a>
+<br>
+
+
+<!--
+        <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj2" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="1" height="14">
+                <param name="movie" value="Movie1.swf">
+                <param name="quality" value="High">
+                <embed src="eid.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj2" width="1" height="14"></object>
+<br>
+<br>
+-->
