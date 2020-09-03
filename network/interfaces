@@ -1,0 +1,59 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+#auto  wlxc4a81df3cfe1
+#iface wlxc4a81df3cfe1 inet manual
+#wireless-mode Master
+# The primary network interface
+#auto eno1
+#iface eno1 inet static
+#        address 192.168.1.212
+#        netmask 255.255.0.0
+#        gateway 192.168.1.254
+#        dns-nameservers 8.8.8.8 8.8.4.4
+
+#auto br2
+#iface br2 inet manual
+#	bridge_ports enp2s0
+
+auto br0
+iface br0 inet static
+        address 192.168.1.212
+        netmask 255.255.0.0
+        gateway 192.168.1.1
+        dns-nameservers 8.8.8.8
+        bridge_ports eno1
+        bridge_stp on
+        bridge_fd 1 
+        bridge_maxwait 0
+
+
+auto br1
+iface br1 inet dhcp #manual 
+#        address 192.168.1.212
+#        netmask 255.255.0.0
+#        gateway 192.168.1.1
+#        dns-nameservers 8.8.8.8
+        bridge_ports enp2s0 #eno1
+        bridge_stp on
+        bridge_fd 2 
+        bridge_maxwait 0
+
+
+#auto wlxe894f61a732d
+#allow-hotplug wwlxe894f61a732d
+#iface wlxe894f61a732d inet static
+#	address 10.10.0.1
+#	netmask 255.255.255.0
+#	hostapd /etc/hostapd/hostapd.conf
+
+#auto wlx503eaa94f625  wlxe894f61a732d  
+#iface wlx503eaa94f625 inet manual 
+#iface wlxe894f61a732d inet manual
+
