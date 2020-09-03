@@ -1,0 +1,10 @@
+TARGETS = unattended-upgrades openvpn resolvconf apache2 mysql chilli atop freeradius urandom apache-htcacheclean sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+sendsigs: openvpn apache2 mysql apache-htcacheclean chilli freeradius unattended-upgrades atop
+rsyslog: sendsigs openvpn apache2 mysql apache-htcacheclean chilli freeradius atop
+umountnfs.sh: rsyslog openvpn apache2 mysql apache-htcacheclean chilli freeradius unattended-upgrades sendsigs atop
+hwclock.sh: rsyslog mysql
+networking: openvpn apache2 mysql umountnfs.sh
+umountfs: openvpn apache2 urandom mysql networking apache-htcacheclean chilli freeradius unattended-upgrades hwclock.sh resolvconf umountnfs.sh atop
+umountroot: umountfs
+halt: umountroot
+reboot: umountroot

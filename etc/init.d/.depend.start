@@ -1,0 +1,15 @@
+TARGETS = rsyslog unattended-upgrades killprocs openvpn single apache2 mysql chilli atop cron rsync ssh dbus freeradius ondemand rc.local
+INTERACTIVE = openvpn apache2
+openvpn: rsyslog
+single: killprocs
+apache2: rsyslog
+mysql: rsyslog
+chilli: rsyslog
+atop: rsyslog
+cron: rsyslog
+rsync: rsyslog
+ssh: rsyslog
+dbus: rsyslog
+freeradius: rsyslog mysql
+ondemand: rsyslog openvpn apache2 mysql chilli freeradius unattended-upgrades atop cron rsync ssh dbus
+rc.local: rsyslog openvpn apache2 mysql chilli freeradius unattended-upgrades atop cron rsync ssh dbus
