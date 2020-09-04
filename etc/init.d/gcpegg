@@ -1,0 +1,47 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          gcpegg
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start GCP EGG software on virtual terminal 8
+### END INIT INFO
+
+set -e
+
+test -x /usr/sbin/eggsh || exit 0
+test -d /var/spool/gcpegg || exit 0
+
+cd /var/spool/gcpegg
+
+case "$1" in
+  start)
+	echo -n "Starting GCP EGG software on virtual terminal 8: eggsh"
+	openvt -f -c 8 /usr/sbin/eggsh
+	echo "."
+	;;
+  stop)
+	echo -n "Stopping GCP EGG software: eggsh"
+	start-stop-daemon --stop --quiet --oknodo --exec /usr/sbin/eggsh
+	echo "."
+	;;
+  reload|force-reload|restart)
+	echo -n "Restarting GCP EGG software on virtual terminal 8..."
+	start-stop-daemon --stop --quiet --oknodo --exec /usr/sbin/eggsh
+	openvt -f -c 8 /usr/sbin/eggsh
+	echo "done."
+	;;
+  purge)
+	echo -n "Purging all previously generated data by GCP EGG"  
+	rm -r /var/spool/gcpegg/*
+	echo "done."    
+	;;
+  *)
+        echo "Usage: /etc/init.d/gcpegg {start|stop|reload|force-reload|restart|purge}"
+        exit 1
+	;;
+esac
+
+exit 0

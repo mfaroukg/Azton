@@ -1,0 +1,33 @@
+TARGETS = gcpegg nmbd php7.0-fpm rsyslog php7.4-fpm hostapd logmein-hamachi unattended-upgrades cgmanager fcgiwrap lxcfs uuidd killprocs binfmt-support apport samba-ad-dc apache2 single atop pcscd irqbalance webmin chilli mysql virtlockd dbus thermald cgproxy virtlogd ntp rsync anacron ssh cron freeradius avahi-daemon openvpn libvirt-bin cups cups-browsed saned smbd libvirt-guests plymouth ondemand rc.local grub-common
+INTERACTIVE = apache2 openvpn
+apache2: rsyslog
+single: killprocs
+atop: rsyslog
+pcscd: rsyslog
+irqbalance: rsyslog
+webmin: rsyslog
+chilli: rsyslog
+mysql: rsyslog
+virtlockd: rsyslog
+dbus: rsyslog
+thermald: rsyslog
+cgproxy: cgmanager
+virtlogd: rsyslog
+ntp: rsyslog
+rsync: rsyslog
+anacron: rsyslog
+ssh: rsyslog
+cron: rsyslog
+freeradius: rsyslog mysql
+avahi-daemon: dbus rsyslog
+openvpn: rsyslog
+libvirt-bin: rsyslog virtlogd
+cups: rsyslog
+cups-browsed: rsyslog
+saned: rsyslog dbus
+smbd: nmbd cups
+libvirt-guests: libvirt-bin
+plymouth: gcpegg nmbd smbd php7.0-fpm atop rsyslog php7.4-fpm pcscd irqbalance hostapd webmin logmein-hamachi unattended-upgrades chilli apache2 mysql freeradius virtlockd libvirt-guests libvirt-bin cgmanager cups openvpn avahi-daemon dbus thermald cgproxy virtlogd cups-browsed fcgiwrap lxcfs uuidd saned ntp rsync anacron binfmt-support ssh apport cron samba-ad-dc
+ondemand: gcpegg nmbd smbd php7.0-fpm atop rsyslog php7.4-fpm pcscd irqbalance hostapd webmin logmein-hamachi unattended-upgrades chilli apache2 mysql freeradius virtlockd libvirt-guests libvirt-bin cgmanager cups openvpn avahi-daemon dbus thermald cgproxy virtlogd cups-browsed fcgiwrap lxcfs uuidd saned ntp rsync anacron binfmt-support ssh apport cron samba-ad-dc
+rc.local: gcpegg nmbd smbd php7.0-fpm atop rsyslog php7.4-fpm pcscd irqbalance hostapd webmin logmein-hamachi unattended-upgrades chilli apache2 mysql freeradius virtlockd libvirt-guests libvirt-bin cgmanager cups openvpn avahi-daemon dbus thermald cgproxy virtlogd cups-browsed fcgiwrap lxcfs uuidd saned ntp rsync anacron binfmt-support ssh apport cron samba-ad-dc
+grub-common: gcpegg nmbd smbd php7.0-fpm atop rsyslog php7.4-fpm pcscd irqbalance hostapd webmin logmein-hamachi unattended-upgrades chilli apache2 mysql freeradius virtlockd libvirt-guests libvirt-bin cgmanager cups openvpn avahi-daemon dbus thermald cgproxy virtlogd cups-browsed fcgiwrap lxcfs uuidd saned ntp rsync anacron binfmt-support ssh apport cron samba-ad-dc

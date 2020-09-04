@@ -1,0 +1,14 @@
+TARGETS = apache-htcacheclean gcpegg nmbd php7.0-fpm php7.4-fpm hostapd logmein-hamachi unattended-upgrades cgmanager fcgiwrap lxcfs uuidd samba-ad-dc alsa-utils ebtables apache2 resolvconf ufw atop pcscd irqbalance webmin chilli virtlockd thermald cgproxy ntp freeradius openvpn cups-browsed saned smbd libvirt-guests urandom plymouth mysql libvirt-bin cups virtlogd avahi-daemon sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot halt reboot
+libvirt-bin: libvirt-guests
+cups: smbd
+virtlogd: libvirt-bin
+avahi-daemon: libvirt-bin cups-browsed saned
+sendsigs: gcpegg alsa-utils nmbd php7.0-fpm atop php7.4-fpm pcscd irqbalance hostapd plymouth unattended-upgrades chilli apache2 mysql freeradius virtlockd apache-htcacheclean libvirt-guests smbd openvpn avahi-daemon thermald libvirt-bin cups-browsed fcgiwrap lxcfs virtlogd uuidd samba-ad-dc
+rsyslog: atop pcscd irqbalance chilli apache2 mysql freeradius virtlockd apache-htcacheclean openvpn avahi-daemon thermald libvirt-bin cups-browsed sendsigs virtlogd cups saned ntp
+umountnfs.sh: gcpegg alsa-utils nmbd php7.0-fpm atop php7.4-fpm pcscd irqbalance hostapd plymouth unattended-upgrades chilli apache2 mysql freeradius sendsigs virtlockd apache-htcacheclean libvirt-guests smbd openvpn avahi-daemon thermald libvirt-bin cups-browsed rsyslog fcgiwrap lxcfs virtlogd uuidd samba-ad-dc
+hwclock.sh: mysql cups-browsed rsyslog uuidd
+networking: nmbd php7.0-fpm php7.4-fpm umountnfs.sh webmin logmein-hamachi apache2 mysql smbd openvpn cups-browsed samba-ad-dc
+umountfs: gcpegg alsa-utils nmbd ebtables php7.0-fpm atop php7.4-fpm pcscd irqbalance umountnfs.sh hostapd urandom webmin plymouth logmein-hamachi unattended-upgrades chilli apache2 mysql freeradius virtlockd apache-htcacheclean libvirt-guests resolvconf smbd openvpn avahi-daemon thermald libvirt-bin networking cups-browsed hwclock.sh fcgiwrap lxcfs virtlogd uuidd samba-ad-dc
+umountroot: umountfs
+halt: umountroot
+reboot: umountroot

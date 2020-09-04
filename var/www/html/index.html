@@ -1,0 +1,181 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>my Azton</title>
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<style>
+p { 
+  color: #333; 
+  font: 400 0.8em verdana,arial,sans-serif;
+}
+table {
+   margin: auto;
+}
+td {
+   color: #333;
+   font: 400 0.8em verdana,arial,sans-serif;
+   padding: 3px;
+}
+li {
+   color: #333;
+   font: 400 0.8em verdana,arial,sans-serif;
+   padding: 3px 0 3px 0;
+}
+h1 {
+   color: #333;
+   font-size: 150%;
+}
+#login, #contact, #register, #map {
+   padding-bottom: 15px;
+   width: 80%;
+   margin: auto;
+}
+#map {
+   width: 100%;
+}
+#login_form, #contact_form, #register_form {
+   text-align: center;
+   margin: auto;
+}
+#header {
+   width: 90%;
+   margin: auto;
+   height: 80px;
+   line-height: 80px;
+   vertical-align: center;
+   text-align: middle;
+}
+#body {
+   clear: both;
+   width: 80%;
+   margin: auto;
+}
+#footer { 
+   color: #666;
+   font-size: 60%;
+   clear: both;
+   padding-top: 20px;
+   margin: auto;
+}
+#terms {
+   text-align: left;
+   margin: auto;
+}
+body {
+   height: 90%;
+   width: 100%;
+   margin: 10px auto 0px auto;
+   padding: 0;
+   text-align: center;
+   font: 400 0.8em verdana,arial,sans-serif;
+   line-height: 170%;
+   background: #fff;
+   color: #333;
+}
+#openid_url {
+  background: url(openid.gif) no-repeat;
+  background-color: #fff;
+  background-position: 0 50%;
+  color: #000;
+  padding-left: 18px;
+}
+#openid-label,#login-label {
+  font-size: smaller;
+  line-height: 14px;
+  vertical-align: middle;
+}
+.err{
+   font-weight: bold;
+   color: #000;
+   width: 70%;
+   margin: 0px auto 10px auto;
+}
+.fb{
+	margin-right: 0px;
+}
+.google{
+	margin-right: 0px;
+}
+</style>
+<script>
+function getElement(e) {
+  if(document.all) {
+    return document.all[e];
+  } else {
+    return document.getElementById(e);
+  }
+} 
+
+function toggle(obj) {
+  var el = document.getElementById(obj);
+  if (el.style.display != 'none') {
+    el.style.display = 'none';
+  } else {
+    el.style.display = '';
+  }
+}
+
+var last = 'login';
+function toggleAuth(newauth, name) {
+  toggle(newauth+'-form');
+  toggle(newauth+'-label');
+  toggle(last+'-form');
+  toggle(last+'-label');
+  last=newauth;
+}
+
+</script>
+<style type="text/css"></style></head><body>
+<div id="header">
+<!--
+    Header above every page
+
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</div>
+<div id="body">
+<div id="login">
+
+<inyput type="button" name="decline" value="للشكاوى والمقترحات Feedback" onclick="window.location='/www/contact.chi'">
+<input type="button" name="decline" value="Sign-up اشتراكك الاونلين" onclick="window.location='http://10.42.0.1/daloradius/contrib/chilli/portal2/signup-free/index.php'">
+</div>
+<div id="login_footer">
+
+   The message between the form and the footer on the login page
+    An example, "Contact the owner of this hotspot <a href="contact.chi">here</a>">rc="flower.jpg" > > <p style="font:italic small-caps bold 30px/50px Garamond, Georgia, Times, Serif;text-align:center;color:red;">
+</p>
+ <p style="font:italic small-caps bold 30px/50px Garamond, Georgia, Times, Serif;text-align:center;color:orange;">
+
+-->
+<img width="400" height="200" src="/daloradius/images/Azton.jpg" ><br>
+<input type="button" name="decline" value="Coloud السحابة" onclick="window.location='http://azton.mooo.com:6060/MAAS/'">
+<input type="button" name="decline" value="IP phone برنامج التلفون الداخلي" onclick="window.location='http://aztonhr.mooo.com:6060/admin'">
+<input type="button" name="decline" value="Cashier برنامج المحاسبات" onclick="window.location='/dolibarr'">             
+<input type="button" name="decline" value="HSS server برنامج التحكم في الانترنت" onclick="window.location='/daloradius'">
+<input type="button" name="decline" value="Camera security برنامج التحكم في الكاميرات" onclick="window.location='/zm'">
+<input type="button" name="decline" value="Hotel_reservation الفندق" onclick="window.location='/hoteldruid'">
+
+<input type="button" name="decline" value="Sign-up!" onclick="window.location='/daloradius/contrib/chilli/portal2/signup-free/index.php'">
+<br>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+<!--********************************************************************************************************************-->
+<div class="social_icons">
+			<a href="https://www.facebook.com/aztoninc" target="_blank" class="fb">facebook</a>
+			<a href="https://plus.google.com/102965119840665206188" rel="publisher" target="_blank" class="google">google+</a>
+		<br><br><a href="https://sites.google.com/site/aztontrade/" target="_blank" class="news">Azton</a>
+</div>
+<!--********************************************************************************************************************-->
+<!--
+<br><br><a href="http://10.42.0.1:4990/www/status.chi"><img width="40" height="40" src="status.jpg"><br><br>
+
+<a href="https://sites.google.com/site/aztontrade/home"> <img src="flower.jpg" >
+-->
+<br>
+<br>
+
+</body></html>
